@@ -1,0 +1,38 @@
+#################################################################################
+## Server Configuration
+#################################################################################
+
+spring:
+  application:
+    name: englishfy
+  liquibase:
+    change-log: classpath:/db/changelog.yml
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_NAME}
+    password: ${DATABASE_PASSWORD}
+
+
+#################################################################################
+## Feign
+#################################################################################
+
+feign:
+  logging:
+    level: BASIC
+
+
+#################################################################################
+## Logging
+#################################################################################
+
+logging:
+  level:
+    com:
+      englishfy:
+        api:
+          client:
+
+  pattern:
+    console: "%clr(%d{HH:mm:ss.SSS}){blue} %clr(%-5level){magenta} %clr([${spring.application.name:},%X{traceId:-}]){yellow} %clr(:){red} %clr(%m){faint}%n"
+

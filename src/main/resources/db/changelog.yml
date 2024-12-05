@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/sql/01-Add_structure_scope_user_address.sql
+  - include:
+      file: classpath:/db/sql/02-Create_group_main.sql
+  - include:
+      file: classpath:/db/sql/03-Create_scopes_and_groups.sql

@@ -1,0 +1,39 @@
+version: "3.9"
+
+networks:
+  englishfy:
+    driver: bridge
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=root
+      - POSTGRES_DB=englishfy
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [ "CMD-SHELL", "postgres --eval 'db.runCommand({ connectionStatus: 1 })'" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: none
+    ports:
+      - "5432:5432"
+    networks:
+      - englishfy
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: 'mailhog'
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+volumes:
+  pg-data:
+    driver: local
