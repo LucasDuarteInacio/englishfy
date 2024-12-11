@@ -13,4 +13,8 @@ public class DataExistsException extends ApiException {
   public static DataExistsException groupExistsException() {
     return new DataExistsException(new Issue(IssueTypeEnum.GROUP_EXISTS));
   }
+
+  public static DataExistsException courseExistsException() {
+    return new DataExistsException(new Issue(IssueTypeEnum.COURSE_EXISTS));
+  }
 }

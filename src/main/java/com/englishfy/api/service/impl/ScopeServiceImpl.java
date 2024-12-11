@@ -4,11 +4,10 @@ import com.englishfy.api.entity.Scope;
 import com.englishfy.api.entity.repository.ScopeRepository;
 import com.englishfy.api.exception.NotFoundException;
 import com.englishfy.api.service.ScopeService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.UUID;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor

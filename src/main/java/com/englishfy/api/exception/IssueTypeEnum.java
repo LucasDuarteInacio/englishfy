@@ -24,7 +24,11 @@ public enum IssueTypeEnum {
 
   // 41 TO 50
   SCOPE_NOT_FOUND("41", "Scope not found"),
-  SCOPE_EXISTS("42", "There is already a scope registered with this name");
+  SCOPE_EXISTS("42", "There is already a scope registered with this name"),
+
+  // 51 TO 60
+  COURSE_NOT_FOUND("51", "Course not found"),
+  COURSE_EXISTS("52", "There is already a course registered with this name");
 
   private final String code;
   private final String message;

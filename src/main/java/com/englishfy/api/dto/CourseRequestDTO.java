@@ -1,21 +1,22 @@
 package com.englishfy.api.dto;
 
-import java.util.List;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Setter
-@Getter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class GroupRequestDTO {
+public class CourseRequestDTO {
 
   private String name;
 
-  private List<UUID> scopesId;
+  private String description;
+
+  private String courseLevel;
+
+  private UUID userInstructor;
 }

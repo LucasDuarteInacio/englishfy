@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @CrossOrigin(origins = "*")
@@ -41,7 +40,7 @@ public interface AuthController {
         @ApiResponse(responseCode = "201", description = "Get all scopes"),
         @ApiResponse(responseCode = "400", description = "Group exists"),
       })
-  ResponseEntity<GroupResponseDTO> createGroup( @Valid @RequestBody GroupRequestDTO request);
+  ResponseEntity<GroupResponseDTO> createGroup(@Valid @RequestBody GroupRequestDTO request);
 
   @GetMapping("groups")
   @Operation(summary = "Get all groups")
@@ -59,6 +58,5 @@ public interface AuthController {
         @ApiResponse(responseCode = "404", description = "Group not exists"),
       })
   ResponseEntity<GroupResponseDTO> updateGroup(
-      @PathVariable UUID groupId,
-      @Valid @RequestBody GroupRequestDTO request);
+      @PathVariable UUID groupId, @Valid @RequestBody GroupRequestDTO request);
 }

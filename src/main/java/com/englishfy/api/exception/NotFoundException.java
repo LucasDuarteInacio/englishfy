@@ -17,4 +17,8 @@ public class NotFoundException extends ApiException {
   public static NotFoundException scopeNotFoundException() {
     return new NotFoundException(new Issue(IssueTypeEnum.SCOPE_NOT_FOUND));
   }
+
+  public static NotFoundException courseNotFoundException() {
+    return new NotFoundException(new Issue(IssueTypeEnum.COURSE_NOT_FOUND));
+  }
 }

@@ -1,5 +1,6 @@
 package com.englishfy.api.entity;
 
+import static com.englishfy.api.constant.ApiConstant.USER_SCHEMA;
 
 import com.englishfy.api.enums.UserStatusEnum;
 import com.englishfy.api.enums.UserTypeEnum;
@@ -10,10 +11,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import java.util.List;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,8 +19,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import static com.englishfy.api.constant.ApiConstant.USER_SCHEMA;
 
 @Entity
 @Setter

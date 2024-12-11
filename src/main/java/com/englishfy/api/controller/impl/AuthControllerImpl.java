@@ -31,7 +31,7 @@ public class AuthControllerImpl implements AuthController {
 
   @Override
   @SneakyThrows
-  public ResponseEntity<GroupResponseDTO> createGroup( GroupRequestDTO request) {
+  public ResponseEntity<GroupResponseDTO> createGroup(GroupRequestDTO request) {
     GroupResponseDTO response = groupService.newGroup(request);
     return ResponseEntity.created(new URI("id")).body(response);
   }
@@ -42,8 +42,7 @@ public class AuthControllerImpl implements AuthController {
   }
 
   @Override
-  public ResponseEntity<GroupResponseDTO> updateGroup(
-      UUID groupId, GroupRequestDTO request) {
+  public ResponseEntity<GroupResponseDTO> updateGroup(UUID groupId, GroupRequestDTO request) {
     return ResponseEntity.ok(groupService.updateGroup(groupId, request));
   }
 }

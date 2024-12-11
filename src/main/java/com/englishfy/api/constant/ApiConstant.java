@@ -7,5 +7,6 @@ import lombok.NoArgsConstructor;
 public class ApiConstant {
 
   public static final String USER_SCHEMA = "users";
+  public static final String COURSE_SCHEMA = "course";
   public static final String AUTH_SCHEMA = "auth";
 }

@@ -35,24 +35,20 @@ public class GroupServiceImpl implements GroupService {
 
   @Override
   public List<Group> getAll() {
-    return groupRepository.findAll()
-            .stream()
-            .filter(group -> !group.getName().equals("main"))
-            .toList();
+    return groupRepository.findAll().stream()
+        .filter(group -> !group.getName().equals("main"))
+        .toList();
   }
 
   @Override
   @Transactional
   public GroupResponseDTO newGroup(GroupRequestDTO groupRequest) {
 
-    if (groupRepository.findByName( groupRequest.getName()).isPresent()) {
+    if (groupRepository.findByName(groupRequest.getName()).isPresent()) {
       throw DataExistsException.groupExistsException();
     }
 
-    Group group =
-        Group.builder()
-            .name(groupRequest.getName())
-            .build();
+    Group group = Group.builder().name(groupRequest.getName()).build();
 
     Group groupSaved = groupRepository.save(group);
 
